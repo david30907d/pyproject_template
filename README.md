@@ -1,4 +1,4 @@
-# Shopback Assignment [![Build Status](https://travis-ci.com/david30907d/shopback-homework.svg?branch=master)](https://travis-ci.com/github/david30907d/shopback-homework)
+# Pyproject template [![Build Status](https://travis-ci.com/david30907d/pyproject_template.svg?branch=master)](https://travis-ci.com/github/david30907d/pyproject_template)
 
 ## Install
 
