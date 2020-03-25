@@ -1,0 +1,30 @@
+sudo: required
+language: python
+python:
+  - "3.6"
+services:
+  - docker
+install:
+  - pip3 install pipenv mypy
+  # cause travis would install numpy for us, making "pipenv check" failed.
+  - pip3 uninstall -y numpy
+  - pipenv install --system
+before_script:
+  # check may fail, It's a bug of pipenv
+  # - pipenv check
+  - docker build -t project --rm .
+  - docker-compose up -d
+  - sleep 10
+script:
+  - docker-compose exec postgres psql -U postgres -f tmp/tests/fixtures/test.sql
+  - docker-compose exec api sh -c "pipenv install --system --dev"
+  - docker-compose exec api sh -c "pytest"
+  - docker-compose exec api sh -c "pylint --errors-only project"
+  - docker-compose exec api sh -c "mypy project/resources/demo.py --ignore-missing-imports"
+# deploy:
+#   - provider: script
+#     script: bash $TRAVIS_BUILD_DIR/.travis/deploy.sh
+#     on:
+#       branch:
+#         - master
+#         - prod
