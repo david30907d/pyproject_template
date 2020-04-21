@@ -1,7 +1,7 @@
 {
   "name": "shopback",
   "version": "1.0.0",
-  "description": "[![Build Status](https://travis-ci.com/Dcard/Dcard-Data-Team-Repo-Template.svg?token=FjZQpfwxUNPpEosXv6sy&branch=master)](https://travis-ci.com/Dcard/Dcard-Data-Team-Repo-Template)",
+  "description": "[![Build Status](https://github.com/david30907d/pyproject_template.svg?token=FjZQpfwxUNPpEosXv6sy&branch=master)](https://github.com/david30907d/pyproject_template)",
   "main": "index.js",
   "scripts": {
     "test": "pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests",
@@ -26,14 +26,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dcard/Dcard-Data-Team-Repo-Template.git"
+    "url": "git+https://github.com/david30907d/pyproject_template.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Dcard/Dcard-Data-Team-Repo-Template/issues"
+    "url": "https://github.com/david30907d/pyproject_template/issues"
   },
-  "homepage": "https://github.com/Dcard/Dcard-Data-Team-Repo-Template#readme",
+  "homepage": "https://github.com/david30907d/pyproject_template#readme",
   "dependencies": {
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.1.0",
