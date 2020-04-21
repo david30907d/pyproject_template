@@ -3,8 +3,9 @@
 ## Install
 
 1. Python dependencies:
-    1. `pip install poetry`
-    2. `poetry install`
+    1. `virtualenv venv; . venv/bin/activate`
+    2. `pip install poetry`
+    3. `poetry install`
 2. Npm dependencies, for linter, formatter and commit linter (optional):
     1. `brew install npm`
     2. `npm ci`

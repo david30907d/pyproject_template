@@ -1,19 +1,23 @@
-FROM python:3.6.8-alpine3.9
+FROM python:3.7.6-alpine3.11
+
 
 COPY . /app
-COPY Pipfile /app/Pipfile
-COPY Pipfile.lock /app/Pipfile.lock
-
 WORKDIR /app
-RUN apk --update add gcc g++ git nginx postgresql-dev \ 
-    # if you don't need postgres, remember to remove postgresql-dev and sqlalchemy
-    && pip install --no-cache-dir pipenv \
-    && pipenv install --system --deploy \
+RUN apk --update add gcc g++ git nginx postgresql-dev libffi-dev \
+    # 1. if you don't need postgres, remember to remove postgresql-dev and sqlalchemy
+    # 2. libffi-dev is required by poetry
+    && python3 -m venv /venv \
+    && . /venv/bin/activate \
+    && pip install --no-cache-dir poetry \
+    && poetry install --no-interaction --no-dev \
     && apk del gcc git \
+    && pip uninstall -yq poetry \
     && rm -rf /tmp/* /var/cache/apk/*
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8000
 
-CMD nginx && gunicorn -b 127.0.0.1:9000 project.app
+# Setup ENTRYPOINT
+ENTRYPOINT ["./docker-entrypoint.sh"]
+CMD ["server"]
