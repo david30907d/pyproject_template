@@ -1,5 +1,21 @@
 # Pyproject template [![Build Status](https://travis-ci.com/david30907d/pyproject_template.svg?branch=master)](https://travis-ci.com/github/david30907d/pyproject_template)
 
+## Demo
+
+![demo.gif](demo.gif)
+
+This project use several tools, including
+* pytest
+* isort
+* black
+* mypy
+* bandit
+* safety
+* pylint
+* commitlint
+
+to format our code base and check security issues
+
 ## Install
 
 1. Python dependencies:
