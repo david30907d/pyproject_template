@@ -2,7 +2,7 @@
 
 ## Demo
 
-![demo.gif](demo.gif)
+<img width="640" src="demo.gif">
 
 This project use several tools, including
 * pytest
