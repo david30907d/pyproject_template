@@ -28,8 +28,10 @@ to format our code base and check security issues
 
 ## How to Develop
 
-1. commit: `npm run commit`
+1. Commit using commitizen UI: `npm run commit`
 
+    ![img](https://github.com/commitizen/cz-cli/raw/master/meta/screenshots/add-commit.png)
 ## Run
 
 1. test: `npm run test`
+2. Run all linter before commitment would save some effort: `npm run check`
