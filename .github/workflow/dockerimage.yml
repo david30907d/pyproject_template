@@ -13,7 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: 
-        - docker build . --file Dockerfile --tag pyproject:$(date +%s)
+    - uses: whoan/docker-build-with-cache-action@v5
+      with:
+        image_name: pyproject:$(date +%s)
+
+    - name: Prepare repo
+      uses: actions/checkout@v2
+
+    - name: Test
+      uses: onichandame/python-test-action@master
