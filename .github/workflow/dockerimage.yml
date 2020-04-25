@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: whoan/docker-build-with-cache-action@v5
+    - name: docker build with cache
+      uses: whoan/docker-build-with-cache-action@v5
       with:
         image_name: pyproject:$(date +%s)
 
