@@ -4,9 +4,9 @@ ENV POETRY_VIRTUALENVS_CREATE=false \
     POETRY_CACHE_DIR='/var/cache/pypoetry'
 COPY . /app
 WORKDIR /app
-RUN apk --update --no-cache add gcc g++ git nginx postgresql-dev libffi-dev \
+RUN apk --update --no-cache add gcc g++ git libffi-dev openssl-dev \
     # 1. if you don't need postgres, remember to remove postgresql-dev and sqlalchemy
-    # 2. libffi-dev is required by poetry
+    # 2. libffi-dev, openssl-dev is required by poetry
     && pip install --no-cache-dir poetry \
     && poetry install --no-interaction --no-ansi --no-dev \
     # Cleaning poetry installation's cache for production:
