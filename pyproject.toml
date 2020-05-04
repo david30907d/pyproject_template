@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "amazing_talker_crawler"
+name = "python project template"
 version = "0.1.0"
 description = ""
 authors = ["davidtnfsh <davidtnfsh@gmail.com>"]
