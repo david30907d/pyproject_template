@@ -24,7 +24,7 @@
       "bandit",
       "git add"
     ],
-    "**/Dockerfile": [
+    "**/Dockerfile*": [
       "hadolint"
     ]
   },
