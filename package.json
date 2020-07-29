@@ -19,7 +19,7 @@
       "pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests",
       "isort -rc -y -ac -ls",
       "black",
-      "pylint --errors-only",
+      "pylint",
       "mypy --ignore-missing-imports",
       "bandit",
       "git add"
