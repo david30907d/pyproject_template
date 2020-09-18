@@ -19,7 +19,7 @@
       "pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests",
       "isort -rc -y -ac -ls",
       "black",
-      "pylint",
+      "flake8 --config .flake8",
       "mypy --ignore-missing-imports",
       "bandit",
       "git add"
