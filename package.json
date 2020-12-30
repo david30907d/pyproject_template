@@ -11,7 +11,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "bash .github/branch_protected.sh && commitlint -E HUSKY_GIT_PARAMS && pip freeze | safety check --full-report --stdin"
+      "commit-msg": "bash .github/branch_protected.sh && commitlint -E HUSKY_GIT_PARAMS && pip freeze | safety check --full-report --stdin && pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests"
     }
   },
   "lint-staged": {
@@ -21,7 +21,7 @@
       "black",
       "flake8 --config .flake8",
       "mypy --ignore-missing-imports",
-      "bandit",
+      "bandit -lll",
       "git add"
     ],
     "**/Dockerfile*": [
