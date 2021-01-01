@@ -13,6 +13,12 @@
 ## Description
 <!--Describe what the change is**-->
 
+## Try to make your PR easy to review
+
+1. Specific order in which to review <!--Please list order of the files to review-->
+
+ref: [How to Split Pull Requests – Good Practices, Methods and Git Strategies](https://www.thedroidsonroids.com/blog/splitting-pull-request)
+
 ## Checklist:
 - [ ] Add test cases to all the changes you introduce
 - [ ] Update the documentation if necessary
