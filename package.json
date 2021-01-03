@@ -11,7 +11,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "bash .github/branch_protected.sh && commitlint -E HUSKY_GIT_PARAMS && pip freeze | safety check --full-report --stdin && pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests"
+      "commit-msg": "bash .github/branch_protected.sh && pip freeze | safety check --full-report --stdin && pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests"
     }
   },
   "lint-staged": {
@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/david30907d/pyproject_template#readme",
   "dependencies": {
-    "commitizen": "^4.1.2",
+    "commitizen": "^4.2.2",
     "cz-conventional-changelog": "^3.1.0",
     "dot-prop": "^5.2.0",
     "husky": "^1.3.1",
@@ -49,11 +49,12 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^8.3.4"
+    "@commitlint/config-conventional": "^11.0.0",
+    "cz-emoji": "^1.3.1"
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
+      "path": "cz-emoji"
     }
   }
 }
