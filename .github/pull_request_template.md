@@ -15,7 +15,16 @@
 
 ## Try to make your PR easy to review
 
-1. Specific order in which to review <!--Please list order of the files to review-->
+- [ ] anotate Pull Requests: **Is there a specific order in which to review**
+- [ ] Separate refactoring from features
+- [ ] The feature didn't require too many code changes
+- [ ] Not Too much test code needs to be changed
+- [ ] Not Too little test code needs to be changed
+- [ ] Units first, integration later
+- [ ] Separate UI from logic
+- [ ] Create new branch with cherry picks to separate your big PR
+
+![img](https://www.thedroidsonroids.com/wp-content/uploads//2018/12/Process.svg)
 
 ref: [How to Split Pull Requests – Good Practices, Methods and Git Strategies](https://www.thedroidsonroids.com/blog/splitting-pull-request)
 
