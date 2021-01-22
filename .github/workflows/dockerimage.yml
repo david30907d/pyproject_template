@@ -10,7 +10,7 @@ on:
       ManuallyTrigger:
         description: 'Run workflow to manually trigger the workflow'     
         required: false
-        default: 'placeholder'
+        default: 'just click the button'
 
 jobs:
 
@@ -21,4 +21,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Bｚuild the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: |
+        echo "helloworld~"
+        docker build . --file Dockerfile --tag my-image-name:$(date +%s)
