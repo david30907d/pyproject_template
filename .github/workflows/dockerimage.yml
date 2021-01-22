@@ -1,11 +1,16 @@
 name: Docker Image CI
 
 on:
-  - push:
+  push:
     branches:
       - master
       - prod
-  - workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      ManuallyTrigger:
+        description: 'Run workflow to manually trigger the workflow'     
+        required: false
+        default: 'just click the button'
 
 jobs:
 
