@@ -1,11 +1,11 @@
 name: Docker Image CI
 
 on:
-  push:
+  - push:
     branches:
       - master
       - prod
-  workflow_dispatch
+  - workflow_dispatch
 
 jobs:
 
