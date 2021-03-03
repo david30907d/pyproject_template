@@ -11,7 +11,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "bash .github/branch_protected.sh && pip freeze | safety check --full-report --stdin && pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests"
+      "commit-msg": "bash .github/branch_protected.sh && safety check --full-report && pytest --cov=project --cov-fail-under=50 --cov-report=term-missing tests"
     }
   },
   "lint-staged": {
