@@ -6,6 +6,7 @@ ENV POETRY_VIRTUALENVS_CREATE=false \
 RUN apk --update --no-cache add gcc g++ git nginx postgresql-dev libffi-dev openssl-dev \
     # 1. if you don't need postgres, remember to remove postgresql-dev and sqlalchemy
     # 2. libffi-dev, openssl-dev is required by poetry
+    && pip install -U pip==22.0.3 \
     && pip install --no-cache-dir poetry==1.0.5
 
 WORKDIR /app
