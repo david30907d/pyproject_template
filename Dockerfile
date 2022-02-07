@@ -11,7 +11,8 @@ RUN apk --update --no-cache add gcc g++ git nginx postgresql-dev libffi-dev open
 WORKDIR /app
 COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
-RUN poetry install --no-interaction --no-ansi --no-dev \
+RUN poetry export --without-hashes -f requirements.txt -o ./requirements.txt \
+    && pip install --user --no-cache-dir --no-warn-script-location -r ./requirements.txt \
     # Cleaning poetry installation's cache for production:
     && rm -rf "$POETRY_CACHE_DIR" \
     && apk del gcc g++ git \
